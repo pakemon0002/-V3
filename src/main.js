@@ -1,3 +1,4 @@
+
 import { LocalNotifications } from '@capacitor/local-notifications';
 import './style.css';
 
@@ -68,4 +69,4 @@ const day=e.target.closest('[data-day]');if(day){showDay(day.dataset.day);return
 });
 document.addEventListener('input',e=>{if(modal==='note'&&e.target.closest('#editor')){const form=$('#editor');if(form){const draft=Object.fromEntries(new FormData(form));localStorage.setItem('mdNoteDraft',JSON.stringify(draft));}}if(e.target.id==='search'){searchText=e.target.value;let pos=e.target.selectionStart;render();const el=$('#search');el?.focus();el?.setSelectionRange(pos,pos)}});
 document.addEventListener('change',e=>{if(e.target.id==='filter'){if(page==='tasks')taskFilter=e.target.value;else if(page==='goals')goalFilter=e.target.value;render()}if(e.target.id==='quicklang'||e.target.id==='language'){data.settings.lang=e.target.value;save();render()}if(e.target.id==='theme'){data.settings.theme=e.target.value;save();render()}if(e.target.id==='importfile'&&e.target.files[0])importBackup(e.target.files[0])});
-render();.
+render();
